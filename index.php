@@ -1,40 +1,43 @@
+<!-- ESERCIZIO
+creaRe un file index.php in cui:
+è definita una classe ‘Movie’
+        => all'interno della classe sono dichiarate delle variabili d'istanza
+        => all'interno della classe è definito un costruttore
+        => all'interno della classe è definito almeno un metodo
+vengono istanziati almeno due oggetti ‘Movie’ e stampati a schermo i valori delle relative proprietà -->
+
 <?php
 
-    class Movie {
-        public $title;
-        public $year;
-
-        public function overTwentys ($year) {
-            if ($year > 2000) {
-                echo 'movie over twenty';
-            } else {
-                echo 'movie under twenty';
-            }
-        }
-
-        function __construct($title){
-            $this->title = $title;
-        }
+class Movie {
+    public $title;
+    public $year;
+    public function Language($lang){
+        $this->lang = $lang;
     }
 
-    $titanic = new Movie('Unknown');
-    $titanic->title = 'Titanic';
-    $titanic->year = 1997;
+    function __construct($place_title, $place_year){
+        $this->title = $place_title;
+        $this->year = $place_year;
+    }
 
-    $titanic->overTwentys (2001);
+    public function GetTitle(){
+        return $this->title;
+    }
+};
 
-    // echo $titanic;
-    // var_dump($titanic);
-    echo $titanic->title;
+$newMovie = new Movie('Unknown', 'Unknown');
+$newMovie->title = 'pippo';
+$newMovie->year = 'pluto';
 
-    $wows = new Movie('Unknown');
-    // $wows->title = 'The Wolf of Wall Street';
-    $wows->year = 2013;
+var_dump($newMovie);
 
-    // $wows->overTwentys ('2000-01-01');
+$newMovie->Language('ita');
+var_dump($newMovie);
+echo $newMovie->GetTitle();
 
-    // echo $wows;
-    // var_dump($wows);
-    echo $wows->title;
 
- ?>
+$newMovie2 = new Movie('Unknown', 'Unknown');
+
+var_dump($newMovie2);
+
+?>
